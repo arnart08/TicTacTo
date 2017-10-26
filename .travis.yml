@@ -5,13 +5,13 @@ addons:
 language: java
 deploy:
   provider: heroku
-  api_key:
-    secure: X69EH0cYFaSBYvPccUMoZ4j6LxNSiXP7if9WBgIKuf1r+aOsTik2bV5EH17fp8zAL0+ifixzTileY4rEfJzmWQUsG3PQ+8kOe5jowsxAxOKPbeJz9VnMhMK1EZXUM9/JLmTRzioMAWw8Fkhihs6fErB9sPaYzF0CxwBRfjSWCyv6wd2waZGE0ZFz7fuWGlN/iqbaq3x5nnFGUMUxjz0ljPhe8194lRM7K5O9Yrz9JLW33m/xvyRWYzyIPDByHytEbPAQ9FixX7+QYPL/0mS5cfumcO9vqUWRQkIjGUtgJKAcR6Bb5Y45Bs8hppcUSWcOA0NfNpU/Bsltt+FNNRewielK/Lw5gtEJn/xXtFeVZ8D8CFWYZm68HoiTrLXjyW+ogjwvTBhKEXNO8F9FS4QnF8ITChXBHtWWR4H1BSWecTnPx6HD/2Rs2NuMcoyW230tsf2zn+w9L4LQUQHZMYfmh8uKJxeljaGB/aJgM+a0cORg2p0INf+nd1ONpEoPoJYwZPr2YMsUWNvjknpFsYiaBXaEfZM6TL+E5WW/GV66sLkDKRnKeApuskiAQPHKt4SotAVJR3G94F97Ch6GY8rT0fJ65YcMez1VgOapXY/89LqLpiij76cZ52BGbFGnJUYPSRnzv3uxtFRvvYl2N/aM+IJE/bs7HZebDFqSCh+GV94=
   app: hidden-dusk-82258
+  api_key:
+    secure: il4BG8o0JTkPqwhj63sNzanvai0STZAo5QDk6u8BZbubpk5O+YmWK6TnhKS7zBxyyYbgCmQM5y8ZzhvCo9hdnWgyOkRFFjkzqPEe2gF/rafQRS6/xdI0P7NChpnu4POIfzaZN1wNQ0iDMWOQJ5BECLLqaYEQfLAZa+Kqo5WQibgc6KrerxN7ZY8XyWMPka/D0Xk8ngRZkHxfGnZhFBLPTeA9i0N2rgd6AlgMVEaEtlpbKCogwDwTMzkJbT5jyz7SAdKDPVEkuZox1VWwP2seTJYZbGVwi31HKnBPvjtibh11mn64XOQmwQL3tupqnCFmuIcJ5rHeckbzncViQ6viYYivP5+OxWpMEBaQry3VYvEcbn5R5Gy+JvZDZ/qluCo8LeL3y/hDcZfzSXBqLKIDpceQNBFLsMN1o+bqo1KREzJV2nL4EEumr/cRTsSLfVGZ4rKBCmXxLKhj3fF+nmTh5MJOkGXoHVv+433Z+dPRwDdTm8Vg69BEja67m/kpyLDFM9TjMcuV+VPml82b1KeLTWXAl2zg76IOwbXLuqcPX289Xlw1q0LJxdOeDHbVSxSUUI0UeHnB5ISlPVSn+DqMwjiYgU51BzX5cMshXZu3+hvri+XFrZGbGmIdCgxbisWu4stPGPiObS9n39vQZx3p/OfAcP+61+Mq55ogLYgDT68=
 before_install:
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 https://hidden-dusk-82258.herokuapp.com/ &
+- google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 https://hidden-dusk-82258.herokuapp.com/
+  &
 before_script:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 # give xvfb some time to start
-#sd
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- sleep 3
