@@ -1,4 +1,4 @@
-package is.ru.hugb.calcWeb;
+package is.ru.hugb;
 
 import java.util.concurrent.TimeUnit;
 
