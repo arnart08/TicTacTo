@@ -19,7 +19,7 @@ public abstract class SeleniumTestWrapper {
 
     port = System.getenv("PORT");
     if (port == null) {
-        port = "4567" ;
+        port = "4567";
     }
     baseUrl = "https://hidden-dusk-82258.herokuapp.com/";
   }
