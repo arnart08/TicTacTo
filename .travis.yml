@@ -19,7 +19,6 @@ before_script:
 script:
   - whereis google-chrome-stable
   - whereis chromedriver
-after_success:
 deploy:
 provider: heroku
 app: hidden-dusk-82258
