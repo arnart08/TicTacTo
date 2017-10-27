@@ -19,9 +19,8 @@ before_script:
 script:
   - whereis google-chrome-stable
   - whereis chromedriver
-  - curl: https://www.google.com
-  deploy:
-  provider: heroku
-  app: hidden-dusk-82258
-  api_key:
-    - secure: il4BG8o0JTkPqwhj63sNzanvai0STZAo5QDk6u8BZbubpk5O+YmWK6TnhKS7zBxyyYbgCmQM5y8ZzhvCo9hdnWgyOkRFFjkzqPEe2gF/rafQRS6/xdI0P7NChpnu4POIfzaZN1wNQ0iDMWOQJ5BECLLqaYEQfLAZa+Kqo5WQibgc6KrerxN7ZY8XyWMPka/D0Xk8ngRZkHxfGnZhFBLPTeA9i0N2rgd6AlgMVEaEtlpbKCogwDwTMzkJbT5jyz7SAdKDPVEkuZox1VWwP2seTJYZbGVwi31HKnBPvjtibh11mn64XOQmwQL3tupqnCFmuIcJ5rHeckbzncViQ6viYYivP5+OxWpMEBaQry3VYvEcbn5R5Gy+JvZDZ/qluCo8LeL3y/hDcZfzSXBqLKIDpceQNBFLsMN1o+bqo1KREzJV2nL4EEumr/cRTsSLfVGZ4rKBCmXxLKhj3fF+nmTh5MJOkGXoHVv+433Z+dPRwDdTm8Vg69BEja67m/kpyLDFM9TjMcuV+VPml82b1KeLTWXAl2zg76IOwbXLuqcPX289Xlw1q0LJxdOeDHbVSxSUUI0UeHnB5ISlPVSn+DqMwjiYgU51BzX5cMshXZu3+hvri+XFrZGbGmIdCgxbisWu4stPGPiObS9n39vQZx3p/OfAcP+61+Mq55ogLYgDT68=
+  - deploy:
+    provider: heroku
+    app: hidden-dusk-82258
+    api_key:
+      - secure: il4BG8o0JTkPqwhj63sNzanvai0STZAo5QDk6u8BZbubpk5O+YmWK6TnhKS7zBxyyYbgCmQM5y8ZzhvCo9hdnWgyOkRFFjkzqPEe2gF/rafQRS6/xdI0P7NChpnu4POIfzaZN1wNQ0iDMWOQJ5BECLLqaYEQfLAZa+Kqo5WQibgc6KrerxN7ZY8XyWMPka/D0Xk8ngRZkHxfGnZhFBLPTeA9i0N2rgd6AlgMVEaEtlpbKCogwDwTMzkJbT5jyz7SAdKDPVEkuZox1VWwP2seTJYZbGVwi31HKnBPvjtibh11mn64XOQmwQL3tupqnCFmuIcJ5rHeckbzncViQ6viYYivP5+OxWpMEBaQry3VYvEcbn5R5Gy+JvZDZ/qluCo8LeL3y/hDcZfzSXBqLKIDpceQNBFLsMN1o+bqo1KREzJV2nL4EEumr/cRTsSLfVGZ4rKBCmXxLKhj3fF+nmTh5MJOkGXoHVv+433Z+dPRwDdTm8Vg69BEja67m/kpyLDFM9TjMcuV+VPml82b1KeLTWXAl2zg76IOwbXLuqcPX289Xlw1q0LJxdOeDHbVSxSUUI0UeHnB5ISlPVSn+DqMwjiYgU51BzX5cMshXZu3+hvri+XFrZGbGmIdCgxbisWu4stPGPiObS9n39vQZx3p/OfAcP+61+Mq55ogLYgDT68=
