@@ -3,21 +3,20 @@ sudo: required
 addons:
   chrome: stable
 language: java
-deploy:
-provider: heroku
-app: hidden-dusk-82258
-api_key:
-  - secure: il4BG8o0JTkPqwhj63sNzanvai0STZAo5QDk6u8BZbubpk5O+YmWK6TnhKS7zBxyyYbgCmQM5y8ZzhvCo9hdnWgyOkRFFjkzqPEe2gF/rafQRS6/xdI0P7NChpnu4POIfzaZN1wNQ0iDMWOQJ5BECLLqaYEQfLAZa+Kqo5WQibgc6KrerxN7ZY8XyWMPka/D0Xk8ngRZkHxfGnZhFBLPTeA9i0N2rgd6AlgMVEaEtlpbKCogwDwTMzkJbT5jyz7SAdKDPVEkuZox1VWwP2seTJYZbGVwi31HKnBPvjtibh11mn64XOQmwQL3tupqnCFmuIcJ5rHeckbzncViQ6viYYivP5+OxWpMEBaQry3VYvEcbn5R5Gy+JvZDZ/qluCo8LeL3y/hDcZfzSXBqLKIDpceQNBFLsMN1o+bqo1KREzJV2nL4EEumr/cRTsSLfVGZ4rKBCmXxLKhj3fF+nmTh5MJOkGXoHVv+433Z+dPRwDdTm8Vg69BEja67m/kpyLDFM9TjMcuV+VPml82b1KeLTWXAl2zg76IOwbXLuqcPX289Xlw1q0LJxdOeDHbVSxSUUI0UeHnB5ISlPVSn+DqMwjiYgU51BzX5cMshXZu3+hvri+XFrZGbGmIdCgxbisWu4stPGPiObS9n39vQZx3p/OfAcP+61+Mq55ogLYgDT68=
-#before_install:
-#- google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 https://hidden-dusk-82258.herokuapp.com/ &
-install: # Install ChromeDriver (64bits; replace 64 with 32 for 32bits).
-  - wget -N http://chromedriver.storage.googleapis.com/2.30/chromedriver_linux64.zip -P ~/
-  - unzip ~/chromedriver_linux64.zip -d ~/
-  - rm ~/chromedriver_linux64.zip
-  - sudo mv -f ~/chromedriver /usr/local/share/
-  - sudo chmod +x /usr/local/share/chromedriver
-  - sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
+install:
+- wget -N http://chromedriver.storage.googleapis.com/2.30/chromedriver_linux64.zip
+  -P ~/
+- unzip ~/chromedriver_linux64.zip -d ~/
+- rm ~/chromedriver_linux64.zip
+- sudo mv -f ~/chromedriver /usr/local/share/
+- sudo chmod +x /usr/local/share/chromedriver
+- sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
 before_script:
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
 - sleep 3
+deploy:
+  provider: heroku
+  api_key:
+    secure: FJCRu8wHfA0TlN4O+2u1Zlp0XxgLq/FyJLyiGm90Sw8tYyY25pm3zCg9v9H3qU7zbJNQ29hm5UC6OQNQIeCxc42lW23epAIa+GpocZaUMBQPlRoK0T8BW3a/mnpNgFxT54v3LYaadAM6L1mzwyqf305E7F+dYlthQlcfIb3e1Xm1cEmqp2y35yQoOKZ+dYC37oThkL4fyFV1R16P2b8heeTGlkzRYt4WDKa1WXAGc2c73H2PScBAqJUCrZtd6HJlD3azNV8RL0DAsj2b/bLM1rgUZuuMWR5jt5nC9PGc31rS6CgdffHjKQe6Rs3dq1zE6PcajyWsP4hNSlOn4C1DSe/8tB7PJxndGfPp4K45p9rGQw6XCIewD+7g90rzf2YHnhcuZmAOjVQqk+74lqZ/Mn+GNJLz4ySCIYjLQVtLWhzPZ++E+w24/cnxuPiGdVu0UMs0LJueLaUabaNz7k5DobzThMrV2CNISf4P+USR4UV119iJr+8fBKx4FRxF4S1bh3dSr8k7596mKvDQMq1Wz/ZgRjop9cEkA34GqjjCBhWjdTxmcjxQb90YzEuVJRFjLEnu/bpai09N0DQLt5m2ESjfPk9RWodkzDe2511yKw0WsmLWrLEnKUTpwFgLvD+GSODyXKrDbIg0AfMGSF1C0zwFTQZ06PpgkGC6dRI6wQo=
+  app: TicTacToe
