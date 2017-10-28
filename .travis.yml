@@ -7,13 +7,13 @@ jobs:
     #  script: "gradle check"
     #- stage: deploy to staging
     #  script: skip
-    #  deploy:
-    #  - provider: heroku
-    #    api_key:
-    #      secure: hfngmgQm/JMCCflq7dv8aikyGmkV1raDoI+R9yvuGT9q2VKpka4YRnrT1tIXu8zbFFsn5PP71GD7w1qLnnRWLUfhBoh1Fu/7Goz4moftL9r7SrGMPZt0B5otEm2f9B0QPtcYOQ5RRda8Hz0+21zJmBO+N+gcdN+g8UuPMlq0bevYeCIKgTatelrWowPymWuxZCE9m7ycE2n7i5k/EmBUReMwxCbMBSVWPhEwLMH0/VzKgaeiyY4giuGiMgzZEgPgxKl8csl/BZav+dNGZ1MeEtO+9ICncBy/2xGKB5Fk5u6QMR6kFNGES7ALaRpWFIxy1CfyoKuk/b4oRWM9SB+RBWdd4QRJhHFbxHCGKJNA2MiZoHy9UyMaI2or0Da6TKRyXB6iUt1ylP5MpTCO9aMfKkUfnSSBMJExVTy0VaM08+Cgb7c84AwhnHXEwdI5CTSgLRd0N7p8koMv79FnSlp1apeCbVheGpcm4bHXHCu2AfTKn94Y+LXndS4CMdQt9P46o5Td32TJHVwJLKei2S+uVBA/wteaqUmuPRFLX/sfzi1kySytuE58TqdIP5Ws6ly1o9vAFvwa/xqLV7mC2h0elUG7ja1QaN7fQdYmUNKN9gV79TpvJvSmikO7XpGi+s6DhA6pJtlj32nef8CiOl4FiQENTXE47hmueXFb91H/1mk=
-    #    app: floating-falls-29546
-    #    on:
-    #        all_branches: true
+      deploy:
+      - provider: heroku
+        api_key:
+          secure: hfngmgQm/JMCCflq7dv8aikyGmkV1raDoI+R9yvuGT9q2VKpka4YRnrT1tIXu8zbFFsn5PP71GD7w1qLnnRWLUfhBoh1Fu/7Goz4moftL9r7SrGMPZt0B5otEm2f9B0QPtcYOQ5RRda8Hz0+21zJmBO+N+gcdN+g8UuPMlq0bevYeCIKgTatelrWowPymWuxZCE9m7ycE2n7i5k/EmBUReMwxCbMBSVWPhEwLMH0/VzKgaeiyY4giuGiMgzZEgPgxKl8csl/BZav+dNGZ1MeEtO+9ICncBy/2xGKB5Fk5u6QMR6kFNGES7ALaRpWFIxy1CfyoKuk/b4oRWM9SB+RBWdd4QRJhHFbxHCGKJNA2MiZoHy9UyMaI2or0Da6TKRyXB6iUt1ylP5MpTCO9aMfKkUfnSSBMJExVTy0VaM08+Cgb7c84AwhnHXEwdI5CTSgLRd0N7p8koMv79FnSlp1apeCbVheGpcm4bHXHCu2AfTKn94Y+LXndS4CMdQt9P46o5Td32TJHVwJLKei2S+uVBA/wteaqUmuPRFLX/sfzi1kySytuE58TqdIP5Ws6ly1o9vAFvwa/xqLV7mC2h0elUG7ja1QaN7fQdYmUNKN9gV79TpvJvSmikO7XpGi+s6DhA6pJtlj32nef8CiOl4FiQENTXE47hmueXFb91H/1mk=
+        app: floating-falls-29546
+        on:
+            all_branches: true
   #- stage: test staging
   #    addons:
   #      chrome: stable
@@ -34,10 +34,10 @@ jobs:
       if: branch = master
       script: skip
       deploy:
-        - provider: heroku
-          api_key:
-             - secure: KHQO+gR8BabNYtjKlzl4xiRg2DqPgoYsMf4omcXBj5cmnSilI7N1kPyxYIB5qr3SoAP74wCECeoQY+cblWBem0pe3a0C3e5t4u2YjvlVWDrsnQ/wh8UKXZqX71ao5n3elLU7Aiu/QZyrsIDWHgA+NwerBrmvedkJCSi626+YVP4K7V+gRYqEMhr3v79clspfM76Q3u+CM0jyBQWEp+WSCl5SReNl4aqmnXhef8AcuHVOGsiLdgD49Oft6vWbBW70h2kHYkAEQNGWdIT2inJM/BHjDLE/47VJEptIxPyOrNKj3SScmPu2f//8MU5SzcgtYVQh7nLF3YlC9KT1jKQNt3b7kDdkZhHwjg83TkPw77n6qpUyuDQwdtPw7r+ZmwybS/PwzctQUuCRxuCNOzLV2iAmltC7ELfqwOQbOrm/5bFnw+6h6e9MK7BE7T95G+4tdCclj+9Vw7RFH18e1YpsT5Oei82YbVo49+ouVFjcesZGkHUbV/B/HLaOzMUWDRWKmVeWS3qyqJgw04+wrR7hfuoaaithuUMgSm4O4epl4AbpCcnGuuzweJn37PEp/OcUQwFN3+Dinjc1HvbZlEAKbkHAyZx3xOJv0caCgW3GQfcAONihshrtMZrJ9QFBahn/t8P3RuWsoyDTNvajSTl+8oMqDTvOyeJYN4Cg/ixUVHw=
-          app: whispering-crag-91285
+      - provider: heroku
+        api_key:
+          secure: hfngmgQm/JMCCflq7dv8aikyGmkV1raDoI+R9yvuGT9q2VKpka4YRnrT1tIXu8zbFFsn5PP71GD7w1qLnnRWLUfhBoh1Fu/7Goz4moftL9r7SrGMPZt0B5otEm2f9B0QPtcYOQ5RRda8Hz0+21zJmBO+N+gcdN+g8UuPMlq0bevYeCIKgTatelrWowPymWuxZCE9m7ycE2n7i5k/EmBUReMwxCbMBSVWPhEwLMH0/VzKgaeiyY4giuGiMgzZEgPgxKl8csl/BZav+dNGZ1MeEtO+9ICncBy/2xGKB5Fk5u6QMR6kFNGES7ALaRpWFIxy1CfyoKuk/b4oRWM9SB+RBWdd4QRJhHFbxHCGKJNA2MiZoHy9UyMaI2or0Da6TKRyXB6iUt1ylP5MpTCO9aMfKkUfnSSBMJExVTy0VaM08+Cgb7c84AwhnHXEwdI5CTSgLRd0N7p8koMv79FnSlp1apeCbVheGpcm4bHXHCu2AfTKn94Y+LXndS4CMdQt9P46o5Td32TJHVwJLKei2S+uVBA/wteaqUmuPRFLX/sfzi1kySytuE58TqdIP5Ws6ly1o9vAFvwa/xqLV7mC2h0elUG7ja1QaN7fQdYmUNKN9gV79TpvJvSmikO7XpGi+s6DhA6pJtlj32nef8CiOl4FiQENTXE47hmueXFb91H/1mk=
+        app: floating-falls-29546
           on:
               branch: master
 #bla
