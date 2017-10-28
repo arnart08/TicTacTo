@@ -1,9 +1,6 @@
 dist: trusty
 sudo: required
 language: java
-env:
- global:
-  - secure: a5nQG3Dld+ACsl2YNcCvEgQlB/9UIOy7YIp3q2KojbPJT26jYXFJVHDk65Tm3PnHt49UpT4BNY7zSAzbOZtLQC9sZLvBq0MV+423gkscFmuuVYEHlzvW2GqXIbQRueVdJoscguxkLhmTBl/9kWMUBvjUQKtL22vdOe04gZvU80E41NgcrbvANzqpfMVFxCpJv6z8k8ChQa6bdttO+8YVjPSw4BHpxzrXf8uk7jvXPSrjyP5W23hrUEqJowBv2qdLm/O44sWKRi+w+6EyewDaQALZzGe0A/KlnTzEE1xpDK62KUvD5Mmu1EOwoHfX7yvSw2MrmnPXDhzx1C1iYq9Ird24RlZSqEiUQ3MoiJCbgkPiNo2MXl7jO1DTI6cCXwOSJybG4HdwlEwlgXsxmXjD5v4iswqinhtQxtgob83uX3QcP2Yo4+P9i40QKrD6dw5vfnznw/2QefF2DJhh6EjIa+C2evfClCBgh8jRBdcHVVrnMxKNl76XtEWcVfDrhEUGogK1No8uN5u65jMn0yuQcoAnYzSabJAenI308OZfvwq8Rrz4ll9i2kvMnIimUrrQj4avc46CSW0T8aqJh8Na1NT3u2hB1Ug0EG9uKqtO2C+CNyC6ocP2hzp9B1dCAqa1Smsl5tCLvzXBCk8h/hbG8yQK5Su5UF/mLPxsPkqlXE4=
 jobs:
   include:
     #- stage: unit tests
@@ -36,6 +33,9 @@ jobs:
   #    script: 'gradle selenium'
     - stage: deploy to production
       if: branch = master
+      env:
+        global:
+          - secure: a5nQG3Dld+ACsl2YNcCvEgQlB/9UIOy7YIp3q2KojbPJT26jYXFJVHDk65Tm3PnHt49UpT4BNY7zSAzbOZtLQC9sZLvBq0MV+423gkscFmuuVYEHlzvW2GqXIbQRueVdJoscguxkLhmTBl/9kWMUBvjUQKtL22vdOe04gZvU80E41NgcrbvANzqpfMVFxCpJv6z8k8ChQa6bdttO+8YVjPSw4BHpxzrXf8uk7jvXPSrjyP5W23hrUEqJowBv2qdLm/O44sWKRi+w+6EyewDaQALZzGe0A/KlnTzEE1xpDK62KUvD5Mmu1EOwoHfX7yvSw2MrmnPXDhzx1C1iYq9Ird24RlZSqEiUQ3MoiJCbgkPiNo2MXl7jO1DTI6cCXwOSJybG4HdwlEwlgXsxmXjD5v4iswqinhtQxtgob83uX3QcP2Yo4+P9i40QKrD6dw5vfnznw/2QefF2DJhh6EjIa+C2evfClCBgh8jRBdcHVVrnMxKNl76XtEWcVfDrhEUGogK1No8uN5u65jMn0yuQcoAnYzSabJAenI308OZfvwq8Rrz4ll9i2kvMnIimUrrQj4avc46CSW0T8aqJh8Na1NT3u2hB1Ug0EG9uKqtO2C+CNyC6ocP2hzp9B1dCAqa1Smsl5tCLvzXBCk8h/hbG8yQK5Su5UF/mLPxsPkqlXE4=
       script: skip
       after_script:
       - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
