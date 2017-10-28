@@ -5,15 +5,15 @@ jobs:
   include:
     #- stage: unit tests
     #  script: "gradle check"
-    - stage: deploy to staging
-      script: skip
-      deploy:
-      - provider: heroku
-        api_key:
-          secure: hfngmgQm/JMCCflq7dv8aikyGmkV1raDoI+R9yvuGT9q2VKpka4YRnrT1tIXu8zbFFsn5PP71GD7w1qLnnRWLUfhBoh1Fu/7Goz4moftL9r7SrGMPZt0B5otEm2f9B0QPtcYOQ5RRda8Hz0+21zJmBO+N+gcdN+g8UuPMlq0bevYeCIKgTatelrWowPymWuxZCE9m7ycE2n7i5k/EmBUReMwxCbMBSVWPhEwLMH0/VzKgaeiyY4giuGiMgzZEgPgxKl8csl/BZav+dNGZ1MeEtO+9ICncBy/2xGKB5Fk5u6QMR6kFNGES7ALaRpWFIxy1CfyoKuk/b4oRWM9SB+RBWdd4QRJhHFbxHCGKJNA2MiZoHy9UyMaI2or0Da6TKRyXB6iUt1ylP5MpTCO9aMfKkUfnSSBMJExVTy0VaM08+Cgb7c84AwhnHXEwdI5CTSgLRd0N7p8koMv79FnSlp1apeCbVheGpcm4bHXHCu2AfTKn94Y+LXndS4CMdQt9P46o5Td32TJHVwJLKei2S+uVBA/wteaqUmuPRFLX/sfzi1kySytuE58TqdIP5Ws6ly1o9vAFvwa/xqLV7mC2h0elUG7ja1QaN7fQdYmUNKN9gV79TpvJvSmikO7XpGi+s6DhA6pJtlj32nef8CiOl4FiQENTXE47hmueXFb91H/1mk=
-        app: floating-falls-29546
-        on:
-            all_branches: true
+    #- stage: deploy to staging
+    #  script: skip
+    #  deploy:
+    #  - provider: heroku
+    #    api_key:
+    #      secure: hfngmgQm/JMCCflq7dv8aikyGmkV1raDoI+R9yvuGT9q2VKpka4YRnrT1tIXu8zbFFsn5PP71GD7w1qLnnRWLUfhBoh1Fu/7Goz4moftL9r7SrGMPZt0B5otEm2f9B0QPtcYOQ5RRda8Hz0+21zJmBO+N+gcdN+g8UuPMlq0bevYeCIKgTatelrWowPymWuxZCE9m7ycE2n7i5k/EmBUReMwxCbMBSVWPhEwLMH0/VzKgaeiyY4giuGiMgzZEgPgxKl8csl/BZav+dNGZ1MeEtO+9ICncBy/2xGKB5Fk5u6QMR6kFNGES7ALaRpWFIxy1CfyoKuk/b4oRWM9SB+RBWdd4QRJhHFbxHCGKJNA2MiZoHy9UyMaI2or0Da6TKRyXB6iUt1ylP5MpTCO9aMfKkUfnSSBMJExVTy0VaM08+Cgb7c84AwhnHXEwdI5CTSgLRd0N7p8koMv79FnSlp1apeCbVheGpcm4bHXHCu2AfTKn94Y+LXndS4CMdQt9P46o5Td32TJHVwJLKei2S+uVBA/wteaqUmuPRFLX/sfzi1kySytuE58TqdIP5Ws6ly1o9vAFvwa/xqLV7mC2h0elUG7ja1QaN7fQdYmUNKN9gV79TpvJvSmikO7XpGi+s6DhA6pJtlj32nef8CiOl4FiQENTXE47hmueXFb91H/1mk=
+    #    app: floating-falls-29546
+    #    on:
+    #        all_branches: true
   #- stage: test staging
   #    addons:
   #      chrome: stable
