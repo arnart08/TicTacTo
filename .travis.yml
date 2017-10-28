@@ -5,8 +5,8 @@ jobs:
   include:
     #- stage: unit tests
     #  script: "gradle check"
-    #- stage: deploy to staging
-    #  script: skip
+    - stage: deploy to staging
+      script: skip
       deploy:
       - provider: heroku
         api_key:
