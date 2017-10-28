@@ -4,7 +4,6 @@ language: java
 jobs:
   include:
   - stage: deploy to staging
-    if: branch = ts
     script: skip
     deploy:
     - provider: heroku
@@ -13,23 +12,7 @@ jobs:
       app: floating-falls-29546
       on:
         all_branches: true
-  - stage: deploy to production
-    if: branch = master
-    env:
-      global:
-      - secure: Uykfoo7GkQlS9R2GM+9zbZ5Uue3eRvrgrFUmY3zwpkm/C0iQBBfrcMp/qFTn6YooKeJgNb+kTUHyfe95zEBfGpVuy/VVO28z+5TOqbFNDaQJdngDTX0o4RX7PvWoL3/xGycPcz0JHD5s5gMr6PvQx9kDdSyD+3emAeMiVR4G8pbDqBfMBjfi3Oag3G+YuSDrUfwpDX5ene1tZcCJUXxkMBOBzz2+dcca7Th80GzpnehXlKuKvjCkYb+hPsMykNotC7BMykmoNEgsLGL9CfR6Q1T/2c80o40gTr0d9Cgpnu/BY882V0dZRXFs7MFy9IAfmg60XGvWDgtTu67SjGZQQrk6eLvzVEG6LB1pl+3vF1UYTwl2id6bM2YYJbAGoc7ixacaTD2tcD9zWTAc2TzgCxPccSHGj4m7UWKQYoRcQX810XhCtKRcqVi6OyHMA93UFzvmXOJkMtsD5f3fCYBXx8MA47UYvAv4PQG46Q8VqNw3asU6BUG0wSCC61y0tRgdkTvSsndVGQDL/3j0x09qydXoiMK7SfL/rhK3Qd1BscqDLeosyYyDW2lmJlUu/WdZo3nD4K1o7F/IaT28UCDdUWbkYhHzAZy8RZlvppdbHyNWw9LjRXtZxZzF+sbnsyKvSnj0xDDH0wX4h/F2Ek05WZunhxkF+svmRvsGCNoQojI=
-    script: skip
-    after_script:
-    - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
-    - git remote add heroku git@heroku.com:whispering-crag-91285.git
-    - echo "Host heroku.com" >> ~/.ssh/config
-    - echo "   StrictHostKeyChecking no" >> ~/.ssh/config
-    - echo "   CheckHostIP no" >> ~/.ssh/config
-    - echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
-    - heroku keys:clear
-    - yes | heroku keys:add
-    - yes | git push heroku master
 notifications:
   slack:
     rooms:
-      secure: YGmgBFA7S1x08ebU5XB9cEpaqnxGCVhwIcQZV33M4iCDOWe8+cMpUpGjIw6zlYEbU6Ov5Xct2A96wsyrkESZsNRPFZlfp1Grvrd2oiagUBiAkNsIrEJSlUhIHMRmvC2WFnknnIC+q8NpfgxGpB2BhBNHV1lpsbmsW8VmgeelGGb6NyvhS3+Jgpf/B52mlzuFjN/Cr92X4GwUyYBm5r/wQvIoorVNs+dpLxLAGc7gCc5fvlAFA9bncGJl6x+IxqDyK2NLw6PAsizyB2d5y9AEAJ+KJipY6FiQB+A5CJC0FjRGdmkx8t/QOIOX13zb6Ig2w7Wp19HoDesKqnjg9InOn66AKBidE+BQHK3cgWTixv7mcWcdjmE8WeC87NYlH46rfix6VuJWPiBqAQJKcc+YcT4Vo33QYs+hmgpdWIbdBgOiPH7EDY0vT1GUr8fMnvwN+kGiG5KTREntma0E4SAt3efbHhT06VXnaMw3UQl+oILlHkOYWrN0h7CxSOq5SZL8eiKtqHWt4/wyF7Nu1U6qx/A/VXVUaOKpQb8SVWQXLpxzZIzd773uehmZWGRt1Gke0NXYc3Y5YiKsZXw1JJlXj0X9CLkdip5tz32VhlEKAn0Vq/zu38U4EuIQ+A7UIAsVmn3tccwszwARZ3OyjAfLjLNahOQ07aUJ6ryncrx+pcU=
+      secure: jkhX6D1BOhx6naMueJDmynhMEwWTA00z9zfx83Bi6+vo/bpmsbdeNz9LqgBaYGT2T7XRAPQgaqTgVbCn8UISuW9qz9KrBkwziUGElkGHKISNx4Ckscg7JbWJR7xRuzT6EwsoCanGS8TSLZ1PZXkV7zOgx3aMFJFg6U/lE54pSbO2xMzcCywqR1q82KJ3bIr0IOeN3r5wPisgFfe98HKckkrmXyQD0RliAE/gW8/7dMYZt8Jmtp0fX6YPFqojzd0UgIenqaP/xM9/EwKvc6ljfigfhugZa2PxT8f8/MuubVRYVFr6tm5xluaCrpviJdIqZCvDIThSEpYfvpcVh3bVXb0/hEVgqazeAdQQASUPbV04jS0BaemWboclYpo3wkbOGusmLBtljOOQ9aoc3NNy0698mkYbqGsAVhW4ejkhD+eKaJYyidPJIH6GKAT2o4pwIJs8ha2vH9jHA5ABRgTvxGzp2AGDEDWvh2WUeiBfs792wOy7AgPrMe5pavFw2DbaXxaTG7PE0Gyw8q48ILpmuNDJEuKNc1nURjsTO9R649uNLznhvIo3RusR6L0Mb+1VNzibJPNYTwGfmwa2jry4X1iebVgEqwhEBp2UmBgH+Ge2w0ykMVkDMBOets5iasU+NX3ELJmUHsBhqlo6guKkLoDqMVFxWZm94aJBkjzfOAE=
