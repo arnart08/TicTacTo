@@ -39,9 +39,18 @@ jobs:
       script: skip
       after_script:
       - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
-      - heroku plugins:install https://github.com/ddollar/heroku-anvil
-      - heroku build -r whispering-crag-91285  -b
-        https://github.com/heroku/heroku-buildpack-java.git
+      - git remote add heroku git@heroku.com:infinite-brushlands-76014.git
+      - echo "Host heroku.com" >> ~/.ssh/config
+      - echo "   StrictHostKeyChecking no" >> ~/.ssh/config
+      - echo "   CheckHostIP no" >> ~/.ssh/config
+      - echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
+      - heroku keys:clear
+      - yes | heroku keys:add
+      - yes | git push heroku master
+
+      #- wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+      #- heroku plugins:install https://github.com/ddollar/heroku-anvil
+      #- heroku build -r whispering-crag-91285  -b https://github.com/heroku/heroku-buildpack-java.git
 
       #  - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
       #  - git remote add heroku git@heroku.com:whispering-crag-91285
