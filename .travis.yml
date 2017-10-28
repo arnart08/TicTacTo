@@ -6,6 +6,7 @@ jobs:
     #- stage: unit tests
     #  script: "gradle check"
     - stage: deploy to staging
+      if: branch = ts
       script: skip
       deploy:
       - provider: heroku
@@ -40,7 +41,7 @@ jobs:
       after_script:
       - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
       - heroku plugins:install https://github.com/ddollar/heroku-anvil
-      - heroku build -r whispering-crag-91285  -b
+      - heroku build -r <whispering-crag-91285>  -b
         https://github.com/heroku/heroku-buildpack-java.git
 
       #  - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
