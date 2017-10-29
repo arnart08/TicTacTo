@@ -10,6 +10,7 @@
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
 apply plugin: 'application'
+apply plugin: "com.github.kt3k.coveralls"
 mainClassName = 'is.ru.hugb.TicTacToeWeb'
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -34,6 +35,7 @@ dependencies {
     testCompile 'junit:junit:4.8.2'
     seleniumCompile 'junit:junit:4.12'
     seleniumCompile 'org.seleniumhq.selenium:selenium-java:3.6.0'
+    classpath "org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.8.2"
 }
 
 javadoc {
