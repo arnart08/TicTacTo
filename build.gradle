@@ -6,7 +6,10 @@
  * user guide available at https://docs.gradle.org/4.2/userguide/tutorial_java_projects.html
  */
 
-
+plugins {
+    id 'jacoco'
+    id 'com.github.kt3k.coveralls' version '2.6.3'
+}
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
 apply plugin: 'application'
@@ -18,10 +21,7 @@ repositories {
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
 }
-plugins {
-    id 'jacoco'
-    id 'com.github.kt3k.coveralls' version '2.6.3'
-}
+
 
 jacocoTestReport {
     reports {
@@ -45,7 +45,6 @@ dependencies {
     testCompile 'junit:junit:4.8.2'
     seleniumCompile 'junit:junit:4.12'
     seleniumCompile 'org.seleniumhq.selenium:selenium-java:3.6.0'
-    classpath "org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.8.2"
 }
 
 javadoc {
